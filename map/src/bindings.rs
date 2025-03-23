@@ -106,7 +106,7 @@ pub mod exports {
     pub mod s4 {
         pub mod files {
             #[allow(dead_code, clippy::all)]
-            pub mod load {
+            pub mod map {
                 #[used]
                 #[doc(hidden)]
                 static __FORCE_SECTION_REF: fn() = super::super::super::super::__link_custom_section_describing_imports;
@@ -2168,27 +2168,27 @@ pub mod exports {
                     fn load_map_info(path: _rt::String) -> Result<Info, _rt::String>;
                 }
                 #[doc(hidden)]
-                macro_rules! __export_s4_files_load_0_1_0_cabi {
+                macro_rules! __export_s4_files_map_0_1_0_cabi {
                     ($ty:ident with_types_in $($path_to_types:tt)*) => {
-                        const _ : () = { #[export_name = "s4:files/load@0.1.0#load-map"]
+                        const _ : () = { #[export_name = "s4:files/map@0.1.0#load-map"]
                         unsafe extern "C" fn export_load_map(arg0 : * mut u8, arg1 :
                         usize,) -> * mut u8 { $($path_to_types)*::
                         _export_load_map_cabi::<$ty > (arg0, arg1) } #[export_name =
-                        "cabi_post_s4:files/load@0.1.0#load-map"] unsafe extern "C" fn
+                        "cabi_post_s4:files/map@0.1.0#load-map"] unsafe extern "C" fn
                         _post_return_load_map(arg0 : * mut u8,) { $($path_to_types)*::
                         __post_return_load_map::<$ty > (arg0) } #[export_name =
-                        "s4:files/load@0.1.0#load-map-info"] unsafe extern "C" fn
+                        "s4:files/map@0.1.0#load-map-info"] unsafe extern "C" fn
                         export_load_map_info(arg0 : * mut u8, arg1 : usize,) -> * mut u8
                         { $($path_to_types)*:: _export_load_map_info_cabi::<$ty > (arg0,
                         arg1) } #[export_name =
-                        "cabi_post_s4:files/load@0.1.0#load-map-info"] unsafe extern "C"
+                        "cabi_post_s4:files/map@0.1.0#load-map-info"] unsafe extern "C"
                         fn _post_return_load_map_info(arg0 : * mut u8,) {
                         $($path_to_types)*:: __post_return_load_map_info::<$ty > (arg0) }
                         };
                     };
                 }
                 #[doc(hidden)]
-                pub(crate) use __export_s4_files_load_0_1_0_cabi;
+                pub(crate) use __export_s4_files_map_0_1_0_cabi;
                 #[repr(align(4))]
                 struct _RetArea([::core::mem::MaybeUninit<u8>; 128]);
                 static mut _RET_AREA: _RetArea = _RetArea(
@@ -2313,8 +2313,8 @@ macro_rules! __export_files_impl {
     };
     ($ty:ident with_types_in $($path_to_types_root:tt)*) => {
         $($path_to_types_root)*::
-        exports::s4::files::load::__export_s4_files_load_0_1_0_cabi!($ty with_types_in
-        $($path_to_types_root)*:: exports::s4::files::load);
+        exports::s4::files::map::__export_s4_files_map_0_1_0_cabi!($ty with_types_in
+        $($path_to_types_root)*:: exports::s4::files::map);
     };
 }
 #[doc(inline)]
@@ -2322,12 +2322,12 @@ pub(crate) use __export_files_impl as export;
 #[cfg(target_arch = "wasm32")]
 #[link_section = "component-type:wit-bindgen:0.36.0:s4:files@0.1.0:files:encoded world"]
 #[doc(hidden)]
-pub static __WIT_BINDGEN_COMPONENT_TYPE: [u8; 3989] = *b"\
-\0asm\x0d\0\x01\0\0\x19\x16wit-component-encoding\x04\0\x07\x99\x1e\x01A\x02\x01\
-A\x06\x01B\x04\x01p}\x01j\x01\0\x01s\x01@\x01\x05input\0\0\x01\x04\0\x0adecompre\
-ss\x01\x02\x03\0\x1fs4:compression/decompress@0.1.0\x05\0\x01B\x03\x01p}\x01@\x01\
-\x05input\0\0\0\x04\0\x07decrypt\x01\x01\x03\0\x1es4:encryption/decryption@0.1.0\
-\x05\x01\x01BA\x01m*\x05agave\x04ammo\x05armor\x03axe\x0abattle-axe\x07blowgun\x05\
+pub static __WIT_BINDGEN_COMPONENT_TYPE: [u8; 3988] = *b"\
+\0asm\x0d\0\x01\0\0\x19\x16wit-component-encoding\x04\0\x07\x98\x1e\x01A\x02\x01\
+A\x06\x01B\x03\x01p}\x01@\x01\x05input\0\0\0\x04\0\x07decrypt\x01\x01\x03\0\x1es\
+4:encryption/decryption@0.1.0\x05\0\x01B\x04\x01p}\x01j\x01\0\x01s\x01@\x01\x05i\
+nput\0\0\x01\x04\0\x0adecompress\x01\x02\x03\0\x1fs4:compression/decompress@0.1.\
+0\x05\x01\x01BA\x01m*\x05agave\x04ammo\x05armor\x03axe\x0abattle-axe\x07blowgun\x05\
 board\x03bow\x05bread\x04coal\x04fish\x05flour\x04goat\x04gold\x08gold-ore\x05gr\
 ain\x09gunpowder\x06hammer\x05honey\x04iron\x08iron-ore\x03log\x04mead\x04meat\x07\
 pickaxe\x03pig\x0bfishing-rod\x03saw\x06scythe\x05sheep\x06shovel\x05stone\x06su\
@@ -2390,7 +2390,7 @@ aim-\x12seconds-to-survive/\x13resources-to-gather2\x04\0\x12victory-conditions\
 gs)\x05wares7\x12victory-conditions4\x13mission-descriptions\x0cmission-hints\x0a\
 lua-scripts\x09landscape8\x04\0\x03map\x03\09\x01j\x01:\x01s\x01@\x01\x04paths\0\
 ;\x04\0\x08load-map\x01<\x01j\x01\x20\x01s\x01@\x01\x04paths\0=\x04\0\x0dload-ma\
-p-info\x01>\x04\0\x13s4:files/load@0.1.0\x05\x02\x04\0\x14s4:files/files@0.1.0\x04\
+p-info\x01>\x04\0\x12s4:files/map@0.1.0\x05\x02\x04\0\x14s4:files/files@0.1.0\x04\
 \0\x0b\x0b\x01\0\x05files\x03\0\0\0G\x09producers\x01\x0cprocessed-by\x02\x0dwit\
 -component\x070.220.0\x10wit-bindgen-rust\x060.36.0";
 #[inline(never)]

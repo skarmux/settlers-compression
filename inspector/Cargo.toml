@@ -1,0 +1,16 @@
+[package]
+name = "inspector"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+clap = { version = "4.5.26", features = [ "derive" ] }
+wit-bindgen-rt = { version = "0.37.0", features = ["bitflags"] }
+
+[package.metadata.component.target]
+path = "../wit/map"
+world = "app"
+
+[package.metadata.component.target.dependencies]
+"encryption:decryption" = { path = "../wit/encryption" }
+"compression:decompression" = { path = "../wit/compression" }

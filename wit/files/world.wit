@@ -1,6 +1,6 @@
 package s4:files@0.1.0;
 
-interface load {
+interface map {
 
     record ware-stack {
         size: u8,
@@ -333,7 +333,7 @@ interface load {
 }
 
 world files {
-    export load;
-    import s4:compression/decompress@0.1.0;
+    export map;
     import s4:encryption/decryption@0.1.0;
+    import s4:compression/decompress@0.1.0;
 }

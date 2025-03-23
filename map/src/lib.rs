@@ -1,6 +1,6 @@
 #[allow(warnings)]
 mod bindings;
-use bindings::exports::s4::files::load::{Map, Info, Gamemode, Guest, ResourceRichness};
+use bindings::exports::s4::files::map::{Map, Info, Gamemode, Guest, ResourceRichness};
 use bindings::s4::compression::decompress::decompress;
 use bindings::s4::encryption::decryption::decrypt;
 
@@ -42,7 +42,7 @@ impl Guest for Component {
         }
 
         #[cfg(not(debug_assertions))]
-        reader.seek_relative(8);
+        reader.seek_relative(8).map_err(|err| err.to_string())?;
 
         loop {
             let mut buffer: [u8;24] = [0;24];

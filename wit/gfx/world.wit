@@ -1,6 +1,6 @@
-package s4:gfx@0.1.0;
+package s4:files@0.1.0;
 
-interface load {
+interface gfx {
 
     record image {
         dimensions: tuple<u16,u16>,
@@ -27,6 +27,6 @@ interface load {
 
 }
 
-world gfx {
-    export load;
+world files {
+    export gfx;
 }
